@@ -120,18 +120,19 @@ export default function LandingPage() {
           description="Premium quality and exceptional service"
           features={[
             {
-              id: "quality",              title: "Premium Quality",              description: "Freshly baked with the finest ingredients",              icon: "Star"
+              id: 0,              title: "Premium Quality",              description: "Freshly baked with the finest ingredients",              icon: "Star",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" }
             },
             {
-              id: "custom",              title: "Custom Designs",              description: "Personalized cakes for your special moments",              icon: "Heart"
+              id: 1,              title: "Custom Designs",              description: "Personalized cakes for your special moments",              icon: "Heart",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" }
             },
             {
-              id: "delivery",              title: "Fast Delivery",              description: "Quick and reliable delivery service",              icon: "Truck"
+              id: 2,              title: "Fast Delivery",              description: "Quick and reliable delivery service",              icon: "Truck",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" }
             },
             {
-              id: "support",              title: "24/7 Support",              description: "We're here to help whenever you need",              icon: "Phone"
+              id: 3,              title: "24/7 Support",              description: "We're here to help whenever you need",              icon: "Phone",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" }
             }
           ]}
+          showStepNumbers={true}
           animationType="slide-up"
           textboxLayout="default"
           useInvertedBackground={false}
