@@ -3,7 +3,9 @@
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarStyleApple from "@/components/navbar/NavbarStyleApple/NavbarStyleApple";
 import HeroOverlay from "@/components/sections/hero/HeroOverlay";
+import HeroBillboardScroll from "@/components/sections/hero/HeroBillboardScroll";
 import FeatureCardTwentyThree from "@/components/sections/feature/FeatureCardTwentyThree";
+import FeatureCardNine from "@/components/sections/feature/FeatureCardNine";
 import MetricCardSeven from "@/components/sections/metrics/MetricCardSeven";
 import ProductCardOne from "@/components/sections/product/ProductCardOne";
 import BlogCardThree from "@/components/sections/blog/BlogCardThree";
@@ -97,7 +99,47 @@ export default function LandingPage() {
         />
       </div>
 
+      <div id="hero-billboard" data-section="hero-billboard">
+        <HeroBillboardScroll
+          title="Explore Our Sweet Collection"
+          description="Discover the perfect cake for any occasion"
+          background={{ variant: "gradient-bars" }}
+          buttons={[
+            { text: "View All Products", href: "#products" },
+            { text: "Learn More", href: "#services" }
+          ]}
+          imageSrc="http://img.b2bpic.net/free-photo/top-view-homemade-chocolate-cake-wooden-board-with-fork_114579-90788.jpg"
+          imageAlt="Delicious homemade cake"
+          tag="Featured"
+        />
+      </div>
+
       <div id="services" data-section="services">
+        <FeatureCardNine
+          title="Why Choose Us"
+          description="Premium quality and exceptional service"
+          features={[
+            {
+              id: "quality",              title: "Premium Quality",              description: "Freshly baked with the finest ingredients",              icon: "Star"
+            },
+            {
+              id: "custom",              title: "Custom Designs",              description: "Personalized cakes for your special moments",              icon: "Heart"
+            },
+            {
+              id: "delivery",              title: "Fast Delivery",              description: "Quick and reliable delivery service",              icon: "Truck"
+            },
+            {
+              id: "support",              title: "24/7 Support",              description: "We're here to help whenever you need",              icon: "Phone"
+            }
+          ]}
+          animationType="slide-up"
+          textboxLayout="default"
+          useInvertedBackground={false}
+          tag="Features"
+        />
+      </div>
+
+      <div id="services-alt" data-section="services-alt">
         <FeatureCardTwentyThree
           title="Our Services"
           description="Choose how you want to enjoy our delicious creations"
