@@ -87,7 +87,7 @@ export default function LandingPage() {
           title={cmsData.logo}
           description="Baked with Love & Sweetness"
           buttons={[
-            { text: "Order Now", href: "#products" },
+            { text: "Order Your Cake Today", href: "#products" },
             { text: "View Menu", href: "#gallery" }
           ]}
           imageSrc="http://img.b2bpic.net/free-photo/top-view-cherry-pie-plate-with-white-roses-circle_141793-14280.jpg"
