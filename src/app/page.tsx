@@ -10,8 +10,55 @@ import BlogCardThree from "@/components/sections/blog/BlogCardThree";
 import TestimonialCardFive from "@/components/sections/testimonial/TestimonialCardFive";
 import ContactCTA from "@/components/sections/contact/ContactCTA";
 import FooterLogoReveal from "@/components/sections/footer/FooterLogoReveal";
+import { useState, useEffect } from "react";
+import { MessageCircle, X } from "lucide-react";
 
 export default function LandingPage() {
+  const [chatOpen, setChatOpen] = useState(false);
+  const [messages, setMessages] = useState<Array<{ id: string; text: string; sender: 'user' | 'bot' }>>([]);
+  const [inputValue, setInputValue] = useState("");
+  const [cmsData, setCmsData] = useState({
+    logo: "Sweet Bliss Bakery",    categories: [
+      "Cakes",      "Theme Cakes",      "Relationship Cakes",      "Desserts",      "Birthday Cakes",      "Anniversary Cakes"
+    ],
+    products: [
+      { id: "chocolate", name: "Chocolate Cake", price: "₹500", image: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", alt: "chocolate cake dark cocoa frosting" },
+      { id: "butterscotch", name: "Butterscotch Cake", price: "₹450", image: "http://img.b2bpic.net/free-photo/delicious-floral-feast-still-life_23-2149509034.jpg", alt: "butterscotch cake caramel frosting" },
+      { id: "red-velvet", name: "Red Velvet Cake", price: "₹700", image: "http://img.b2bpic.net/free-photo/slice-chocolate-cake-with-strawberries_114579-17117.jpg", alt: "red velvet cake cream cheese frosting" },
+      { id: "brownies", name: "Brownies", price: "₹250", image: "http://img.b2bpic.net/free-photo/top-view-homemade-chocolate-cake-wooden-board-with-fork_114579-90788.jpg", alt: "fudgy brownies chocolate square dessert" },
+      { id: "cupcakes", name: "Cupcakes", price: "₹300", image: "http://img.b2bpic.net/free-photo/cupcakes-with-glaze-assortment-high-angle_23-2149021991.jpg", alt: "cupcakes frosted colorful pastries" },
+      { id: "cheesecake", name: "Cheesecake", price: "₹550", image: "http://img.b2bpic.net/free-photo/fresh-raspberry-cheesecake_114579-1587.jpg", alt: "creamy cheesecake berry topping" }
+    ],
+    reviews: [
+      { id: "1", name: "Priya Sharma", date: "2 weeks ago", title: "Birthday Celebration", quote: "So pretty and tasty 😍 The cake was absolutely perfect for my daughter's birthday! Everyone loved it.", tag: "Birthday Cake", avatar: "http://img.b2bpic.net/free-photo/woman-showing-ok-sign_23-2148990150.jpg", alt: "happy customer portrait smiling woman" },
+      { id: "2", name: "Rahul Verma", date: "1 month ago", title: "Anniversary Gift", quote: "Best cake ever! The chocolate ganache was rich and delicious. Highly recommended!", tag: "Chocolate Cake", avatar: "http://img.b2bpic.net/free-photo/studio-portrait-serious-bearded-male-dressed-suit_613910-5596.jpg", alt: "man portrait smiling happy customer" },
+      { id: "3", name: "Anjali Desai", date: "3 weeks ago", title: "Wedding Celebration", quote: "Loved it 💖 The custom design was exactly what I imagined. Beautiful and delicious!", tag: "Custom Cake", avatar: "http://img.b2bpic.net/free-photo/portrait-woman-smiling-kitchen_107420-12357.jpg", alt: "woman portrait happy customer smiling" },
+      { id: "4", name: "Neha Gupta", date: "1 week ago", title: "Corporate Event", quote: "Fantastic quality and quick delivery! The cupcakes were fresh and perfectly decorated. Will order again!", tag: "Cupcakes", avatar: "http://img.b2bpic.net/free-photo/friendly-business-team-waving-office-stairway_1262-5054.jpg", alt: "couple portrait happy together" },
+      { id: "5", name: "Arjun Singh", date: "2 days ago", title: "Personal Order", quote: "Amazing flavors and beautiful presentation. Every bite melts in your mouth. Pure bliss!", tag: "Premium Cake", avatar: "http://img.b2bpic.net/free-photo/woman-showing-ok-sign_23-2148990150.jpg", alt: "happy customer portrait smiling woman" },
+      { id: "6", name: "Meera Patel", date: "5 days ago", title: "Special Occasion", quote: "The attention to detail is incredible. Each layer was perfectly baked and flavored. Highly satisfied!", tag: "Layered Cake", avatar: "http://img.b2bpic.net/free-photo/studio-portrait-serious-bearded-male-dressed-suit_613910-5596.jpg", alt: "man portrait smiling happy customer" }
+    ]
+  });
+
+  const handleChatToggle = () => {
+    setChatOpen(!chatOpen);
+  };
+
+  const handleSendMessage = () => {
+    if (inputValue.trim()) {
+      const newMessage = { id: Date.now().toString(), text: inputValue, sender: 'user' as const };
+      setMessages([...messages, newMessage]);
+      setInputValue("");
+      
+      setTimeout(() => {
+        const botResponse = {
+          id: (Date.now() + 1).toString(),
+          text: "Thanks for your message! Our team will get back to you soon. 🎂",          sender: 'bot' as const
+        };
+        setMessages(prev => [...prev, botResponse]);
+      }, 500);
+    }
+  };
+
   return (
     <ThemeProvider
       defaultButtonVariant="bounce-effect"
@@ -27,21 +74,17 @@ export default function LandingPage() {
     >
       <div id="nav" data-section="nav">
         <NavbarStyleApple
-          navItems={[
-            { name: "Cakes", id: "cakes" },
-            { name: "Theme Cakes", id: "theme-cakes" },
-            { name: "Relationship Cakes", id: "relationship-cakes" },
-            { name: "Desserts", id: "desserts" },
-            { name: "Birthday Cakes", id: "birthday-cakes" },
-            { name: "Anniversary Cakes", id: "anniversary-cakes" }
-          ]}
-          brandName="Sweet Bliss Bakery"
+          navItems={cmsData.categories.map((cat, idx) => ({
+            name: cat,
+            id: cat.toLowerCase().replace(/\s+/g, "-")
+          }))}
+          brandName={cmsData.logo}
         />
       </div>
 
       <div id="hero" data-section="hero">
         <HeroOverlay
-          title="Sweet Bliss Bakery"
+          title={cmsData.logo}
           description="Baked with Love & Sweetness"
           buttons={[
             { text: "Order Now", href: "#products" },
@@ -110,26 +153,13 @@ export default function LandingPage() {
         <ProductCardOne
           title="Featured Products"
           description="Browse our delicious selection of cakes, desserts, and treats"
-          products={[
-            {
-              id: "chocolate",              name: "Chocolate Cake",              price: "₹500",              imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg",              imageAlt: "chocolate cake dark cocoa frosting"
-            },
-            {
-              id: "butterscotch",              name: "Butterscotch Cake",              price: "₹450",              imageSrc: "http://img.b2bpic.net/free-photo/delicious-floral-feast-still-life_23-2149509034.jpg",              imageAlt: "butterscotch cake caramel frosting"
-            },
-            {
-              id: "red-velvet",              name: "Red Velvet Cake",              price: "₹700",              imageSrc: "http://img.b2bpic.net/free-photo/slice-chocolate-cake-with-strawberries_114579-17117.jpg",              imageAlt: "red velvet cake cream cheese frosting"
-            },
-            {
-              id: "brownies",              name: "Brownies",              price: "₹250",              imageSrc: "http://img.b2bpic.net/free-photo/top-view-homemade-chocolate-cake-wooden-board-with-fork_114579-90788.jpg",              imageAlt: "fudgy brownies chocolate square dessert"
-            },
-            {
-              id: "cupcakes",              name: "Cupcakes",              price: "₹300",              imageSrc: "http://img.b2bpic.net/free-photo/cupcakes-with-glaze-assortment-high-angle_23-2149021991.jpg",              imageAlt: "cupcakes frosted colorful pastries"
-            },
-            {
-              id: "cheesecake",              name: "Cheesecake",              price: "₹550",              imageSrc: "http://img.b2bpic.net/free-photo/fresh-raspberry-cheesecake_114579-1587.jpg",              imageAlt: "creamy cheesecake berry topping"
-            }
-          ]}
+          products={cmsData.products.map(p => ({
+            id: p.id,
+            name: p.name,
+            price: p.price,
+            imageSrc: p.image,
+            imageAlt: p.alt
+          }))}
           gridVariant="three-columns-all-equal-width"
           animationType="slide-up"
           textboxLayout="default"
@@ -173,26 +203,16 @@ export default function LandingPage() {
         <TestimonialCardFive
           title="Customer Reviews"
           description="What our happy customers say about us"
-          testimonials={[
-            {
-              id: "1",              name: "Priya Sharma",              date: "2 weeks ago",              title: "Birthday Celebration",              quote: "So pretty and tasty 😍 The cake was absolutely perfect for my daughter's birthday! Everyone loved it.",              tag: "Birthday Cake",              avatarSrc: "http://img.b2bpic.net/free-photo/woman-showing-ok-sign_23-2148990150.jpg",              avatarAlt: "happy customer portrait smiling woman"
-            },
-            {
-              id: "2",              name: "Rahul Verma",              date: "1 month ago",              title: "Anniversary Gift",              quote: "Best cake ever! The chocolate ganache was rich and delicious. Highly recommended!",              tag: "Chocolate Cake",              avatarSrc: "http://img.b2bpic.net/free-photo/studio-portrait-serious-bearded-male-dressed-suit_613910-5596.jpg",              avatarAlt: "man portrait smiling happy customer"
-            },
-            {
-              id: "3",              name: "Anjali Desai",              date: "3 weeks ago",              title: "Wedding Celebration",              quote: "Loved it 💖 The custom design was exactly what I imagined. Beautiful and delicious!",              tag: "Custom Cake",              avatarSrc: "http://img.b2bpic.net/free-photo/portrait-woman-smiling-kitchen_107420-12357.jpg",              avatarAlt: "woman portrait happy customer smiling"
-            },
-            {
-              id: "4",              name: "Neha Gupta",              date: "1 week ago",              title: "Corporate Event",              quote: "Fantastic quality and quick delivery! The cupcakes were fresh and perfectly decorated. Will order again!",              tag: "Cupcakes",              avatarSrc: "http://img.b2bpic.net/free-photo/friendly-business-team-waving-office-stairway_1262-5054.jpg",              avatarAlt: "couple portrait happy together"
-            },
-            {
-              id: "5",              name: "Arjun Singh",              date: "2 days ago",              title: "Personal Order",              quote: "Amazing flavors and beautiful presentation. Every bite melts in your mouth. Pure bliss!",              tag: "Premium Cake",              avatarSrc: "http://img.b2bpic.net/free-photo/woman-showing-ok-sign_23-2148990150.jpg",              avatarAlt: "happy customer portrait smiling woman"
-            },
-            {
-              id: "6",              name: "Meera Patel",              date: "5 days ago",              title: "Special Occasion",              quote: "The attention to detail is incredible. Each layer was perfectly baked and flavored. Highly satisfied!",              tag: "Layered Cake",              avatarSrc: "http://img.b2bpic.net/free-photo/studio-portrait-serious-bearded-male-dressed-suit_613910-5596.jpg",              avatarAlt: "man portrait smiling happy customer"
-            }
-          ]}
+          testimonials={cmsData.reviews.map(r => ({
+            id: r.id,
+            name: r.name,
+            date: r.date,
+            title: r.title,
+            quote: r.quote,
+            tag: r.tag,
+            avatarSrc: r.avatar,
+            avatarAlt: r.alt
+          }))}
           textboxLayout="default"
           useInvertedBackground={false}
           tag="Reviews"
@@ -215,11 +235,97 @@ export default function LandingPage() {
 
       <div id="footer" data-section="footer">
         <FooterLogoReveal
-          logoText="Sweet Bliss Bakery"
+          logoText={cmsData.logo}
           leftLink={{ text: "Made with love 💗", href: "#" }}
           rightLink={{ text: "Privacy Policy", href: "#" }}
         />
       </div>
+
+      <div
+        className="fixed bottom-6 right-6 z-50"
+        style={{
+          animation: "fadeIn 0.3s ease-in-out"
+        }}
+      >
+        {!chatOpen && (
+          <button
+            onClick={handleChatToggle}
+            className="w-14 h-14 rounded-full bg-primary-cta text-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
+            aria-label="Open chat widget"
+          >
+            <MessageCircle size={24} />
+          </button>
+        )}
+
+        {chatOpen && (
+          <div className="w-80 h-96 bg-card border border-accent rounded-lg shadow-2xl flex flex-col overflow-hidden">
+            <div className="bg-primary-cta text-white p-4 flex justify-between items-center">
+              <h3 className="font-semibold">Sweet Bliss Support</h3>
+              <button
+                onClick={handleChatToggle}
+                className="hover:bg-primary-cta/80 transition-colors p-1 rounded"
+                aria-label="Close chat widget"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-4 space-y-3">
+              {messages.length === 0 ? (
+                <div className="text-foreground/60 text-sm text-center mt-4">
+                  <p>Hi! How can we help you today? 🎂</p>
+                </div>
+              ) : (
+                messages.map(msg => (
+                  <div
+                    key={msg.id}
+                    className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
+                        msg.sender === 'user'
+                          ? 'bg-primary-cta text-white'
+                          : 'bg-background-accent text-foreground'
+                      }`}
+                    >
+                      {msg.text}
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+            <div className="border-t border-accent p-3 flex gap-2">
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                placeholder="Type message..."
+                className="flex-1 px-3 py-2 rounded bg-background border border-accent/50 text-foreground text-sm focus:outline-none focus:border-accent"
+              />
+              <button
+                onClick={handleSendMessage}
+                className="px-4 py-2 bg-primary-cta text-white rounded hover:bg-primary-cta/90 transition-colors text-sm font-medium"
+                aria-label="Send message"
+              >
+                Send
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      `}</style>
     </ThemeProvider>
   );
 }
