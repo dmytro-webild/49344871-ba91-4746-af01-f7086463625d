@@ -120,16 +120,16 @@ export default function LandingPage() {
           description="Premium quality and exceptional service"
           features={[
             {
-              id: 0,              title: "Premium Quality",              description: "Freshly baked with the finest ingredients",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" }
+              id: 0,              title: "Premium Quality",              description: "Freshly baked with the finest ingredients",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=1", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=2", imageAlt: "chocolate cake" }
             },
             {
-              id: 1,              title: "Custom Designs",              description: "Personalized cakes for your special moments",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" }
+              id: 1,              title: "Custom Designs",              description: "Personalized cakes for your special moments",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=3", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=4", imageAlt: "chocolate cake" }
             },
             {
-              id: 2,              title: "Fast Delivery",              description: "Quick and reliable delivery service",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" }
+              id: 2,              title: "Fast Delivery",              description: "Quick and reliable delivery service",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=5", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=6", imageAlt: "chocolate cake" }
             },
             {
-              id: 3,              title: "24/7 Support",              description: "We're here to help whenever you need",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", imageAlt: "chocolate cake" }
+              id: 3,              title: "24/7 Support",              description: "We're here to help whenever you need",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=7", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=8", imageAlt: "chocolate cake" }
             }
           ]}
           showStepNumbers={true}
