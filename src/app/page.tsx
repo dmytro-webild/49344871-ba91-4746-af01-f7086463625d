@@ -18,7 +18,7 @@ export default function LandingPage() {
   const [messages, setMessages] = useState<Array<{ id: string; text: string; sender: 'user' | 'bot' }>>([]);
   const [inputValue, setInputValue] = useState("");
   const [cmsData, setCmsData] = useState({
-    logo: "Sweet Bliss Bakery",    categories: [
+    logo: "Best Cakes in Raidighi ",    categories: [
       "Cakes",      "Theme Cakes",      "Relationship Cakes",      "Desserts",      "Birthday Cakes",      "Anniversary Cakes"
     ],
     products: [
