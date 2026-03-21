@@ -98,10 +98,13 @@ export default function LandingPage() {
     >
       <div id="nav" data-section="nav">
         <NavbarStyleApple
-          navItems={cmsData.categories.map((cat, idx) => ({
-            name: cat,
-            id: cat.toLowerCase().replace(/\s+/g, "-")
-          }))}
+          navItems={[
+            { name: "Home", id: "home" },
+            { name: "Menu", id: "menu" },
+            { name: "About", id: "about" },
+            { name: "Reviews", id: "reviews" },
+            { name: "Contact", id: "contact" }
+          ]}
           brandName={cmsData.logo}
         />
       </div>
