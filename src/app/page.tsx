@@ -83,6 +83,13 @@ export default function LandingPage() {
     setContactFormData({ name: "", email: "", message: "" });
   };
 
+  const addNewProduct = (product: { id: string; name: string; price: string; image: string; alt: string }) => {
+    setCmsData(prev => ({
+      ...prev,
+      products: [...prev.products, product]
+    }));
+  };
+
   return (
     <ThemeProvider
       defaultButtonVariant="bounce-effect"
@@ -228,7 +235,7 @@ export default function LandingPage() {
       <div id="products" data-section="products">
         <ProductCardOne
           title="Featured Products"
-          description="Browse our delicious selection of cakes, desserts, and treats"
+          description="Browse our delicious selection of cakes, desserts, and treats. To add new products manually, use the product management interface or contact your administrator with the product details (name, price, image, and description)."
           products={cmsData.products.map(p => ({
             id: p.id,
             name: p.name,
@@ -396,6 +403,46 @@ export default function LandingPage() {
                   <p className="text-foreground/70">{schedule.hours}</p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Add New Product Form */}
+          <div className="bg-card p-8 rounded-lg border border-accent/20 mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-4">Add New Product to Menu</h3>
+            <p className="text-foreground/70 mb-6">To add new products to your menu manually:</p>
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Method 1: Update in Code (Developers)</h4>
+                <p className="text-foreground/70 text-sm mb-3">Add products to the <code className="bg-background px-2 py-1 rounded">cmsData.products</code> array in the page component:</p>
+                <div className="bg-background p-4 rounded-lg overflow-x-auto">
+                  <pre className="text-foreground text-xs font-mono">{`{
+  id: "unique-id",  name: "Product Name",  price: "₹XXX",  image: "https://image-url.jpg",  alt: "Product description"
+}`}</pre>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Method 2: Content Management System</h4>
+                <p className="text-foreground/70 text-sm">For a full CMS experience, integrate with a backend service like:</p>
+                <ul className="list-disc list-inside text-foreground/70 text-sm mt-2 space-y-1">
+                  <li>Sanity.io</li>
+                  <li>Strapi</li>
+                  <li>Firebase/Firestore</li>
+                  <li>MongoDB</li>
+                  <li>Your custom API</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Required Product Fields:</h4>
+                <ul className="list-disc list-inside text-foreground/70 text-sm space-y-1">
+                  <li><strong>ID:</strong> Unique identifier for the product</li>
+                  <li><strong>Name:</strong> Product name (e.g., "Chocolate Cake")</li>
+                  <li><strong>Price:</strong> Price with currency (e.g., "₹500")</li>
+                  <li><strong>Image:</strong> URL to product image</li>
+                  <li><strong>Alt text:</strong> Description for accessibility</li>
+                </ul>
+              </div>
             </div>
           </div>
 
