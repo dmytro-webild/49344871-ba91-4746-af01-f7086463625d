@@ -408,11 +408,11 @@ export default function LandingPage() {
 
             {/* Add New Product Form */}
             <div className="bg-card p-8 rounded-lg border border-accent/20 mb-8">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Add New Product to Menu</h3>
-              <p className="text-foreground/70 mb-6">To add new products to your menu manually:</p>
+              <h3 className="text-2xl font-bold text-foreground mb-4"></h3>
+              <p className="text-foreground/70 mb-6"></p>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">Method 1: Update in Code (Developers)</h4>
+                  <h4 className="font-semibold text-foreground mb-2"></h4>
                   <p className="text-foreground/70 text-sm mb-3">Add products to the <code className="bg-background px-2 py-1 rounded">cmsData.products</code> array in the page component:</p>
                   <div className="bg-background p-4 rounded-lg overflow-x-auto">
                     <pre className="text-foreground text-xs font-mono">{`{
@@ -422,19 +422,19 @@ export default function LandingPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">Method 2: Content Management System</h4>
-                  <p className="text-foreground/70 text-sm">For a full CMS experience, integrate with a backend service like:</p>
+                  <h4 className="font-semibold text-foreground mb-2"></h4>
+                  <p className="text-foreground/70 text-sm"></p>
                   <ul className="list-disc list-inside text-foreground/70 text-sm mt-2 space-y-1">
-                    <li>Sanity.io</li>
-                    <li>Strapi</li>
-                    <li>Firebase/Firestore</li>
-                    <li>MongoDB</li>
-                    <li>Your custom API</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">Required Product Fields:</h4>
+                  <h4 className="font-semibold text-foreground mb-2"></h4>
                   <ul className="list-disc list-inside text-foreground/70 text-sm space-y-1">
                     <li><strong>ID:</strong> Unique identifier for the product</li>
                     <li><strong>Name:</strong> Product name (e.g., "Chocolate Cake")</li>
