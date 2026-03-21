@@ -35,11 +35,11 @@ export default function LandingPage() {
       "Cakes",      "Theme Cakes",      "Relationship Cakes",      "Desserts",      "Birthday Cakes",      "Anniversary Cakes"
     ],
     products: [
-      { id: "chocolate", name: "Chocolate Cake", price: "₹500", image: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", alt: "chocolate cake dark cocoa frosting" },
-      { id: "butterscotch", name: "Butterscotch Cake", price: "₹450", image: "http://img.b2bpic.net/free-photo/delicious-floral-feast-still-life_23-2149509034.jpg", alt: "butterscotch cake caramel frosting" },
-      { id: "red-velvet", name: "Red Velvet Cake", price: "₹700", image: "http://img.b2bpic.net/free-photo/slice-chocolate-cake-with-strawberries_114579-17117.jpg", alt: "red velvet cake cream cheese frosting" },
+      { id: "chocolate", name: "Chocolate Cake", price: "₹250", image: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg", alt: "chocolate cake dark cocoa frosting" },
+      { id: "butterscotch", name: "Butterscotch Cake", price: "₹59", image: "http://img.b2bpic.net/free-photo/delicious-floral-feast-still-life_23-2149509034.jpg", alt: "butterscotch cake caramel frosting" },
+      { id: "red-velvet", name: "Red Velvet Cake", price: "₹59", image: "http://img.b2bpic.net/free-photo/slice-chocolate-cake-with-strawberries_114579-17117.jpg", alt: "red velvet cake cream cheese frosting" },
       { id: "brownies", name: "Brownies", price: "₹250", image: "http://img.b2bpic.net/free-photo/top-view-homemade-chocolate-cake-wooden-board-with-fork_114579-90788.jpg", alt: "fudgy brownies chocolate square dessert" },
-      { id: "cupcakes", name: "Cupcakes", price: "₹300", image: "http://img.b2bpic.net/free-photo/cupcakes-with-glaze-assortment-high-angle_23-2149021991.jpg", alt: "cupcakes frosted colorful pastries" },
+      { id: "cupcakes", name: "Cupcakes", price: "₹59", image: "http://img.b2bpic.net/free-photo/cupcakes-with-glaze-assortment-high-angle_23-2149021991.jpg", alt: "cupcakes frosted colorful pastries" },
       { id: "cheesecake", name: "Cheesecake", price: "₹550", image: "http://img.b2bpic.net/free-photo/fresh-raspberry-cheesecake_114579-1587.jpg", alt: "creamy cheesecake berry topping" }
     ],
     reviews: [
@@ -124,7 +124,7 @@ export default function LandingPage() {
             { text: "Order Your Cake Today", href: "#products" },
             { text: "View Menu", href: "#gallery" }
           ]}
-          imageSrc="http://img.b2bpic.net/free-photo/top-view-cherry-pie-plate-with-white-roses-circle_141793-14280.jpg"
+          imageSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3Avp5DbRObVKn8bEwpTLSJ14kHz/tmp/cake-image-1774023316364-f800ac40.png"
           imageAlt="Beautiful decorated cake pink frosting"
           showDimOverlay={true}
           showBlur={true}
@@ -153,23 +153,23 @@ export default function LandingPage() {
           features={[
             {
               id: 0,
-              title: "Premium Quality",              description: "Freshly baked with the finest ingredients",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=1", imageAlt: "chocolate cake" },
+              title: "Premium Quality",              description: "Freshly baked with the finest ingredients",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/front-view-cakes-little-with-brown-cream-strawberry-brown-surface_140725-14350.jpg?id=8853488", imageAlt: "chocolate cake" },
               phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=2", imageAlt: "chocolate cake" }
             },
             {
               id: 1,
-              title: "Custom Designs",              description: "Personalized cakes for your special moments",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=3", imageAlt: "chocolate cake" },
-              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=4", imageAlt: "chocolate cake" }
+              title: "Custom Designs",              description: "Personalized cakes for your special moments",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/two-sweet-delicious-piece-cakes-with-rosehips-glass-plate_114579-22400.jpg?id=11333478", imageAlt: "chocolate cake" },
+              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/variety-sweet-cakes-wooden-piece-high-quality-photo_114579-67978.jpg?id=15673584", imageAlt: "chocolate cake" }
             },
             {
               id: 2,
-              title: "Fast Delivery",              description: "Quick and reliable delivery service",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=5", imageAlt: "chocolate cake" },
-              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=6", imageAlt: "chocolate cake" }
+              title: "Fast Delivery",              description: "Quick and reliable delivery service",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/assortment-pieces-cake_114579-28258.jpg?id=11799400", imageAlt: "chocolate cake" },
+              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/lot-piece-cakes-with-cookies-wooden-cutting-board_114579-22262.jpg?id=11333305", imageAlt: "chocolate cake" }
             },
             {
               id: 3,
-              title: "24/7 Support",              description: "We're here to help whenever you need",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=7", imageAlt: "chocolate cake" },
-              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=8", imageAlt: "chocolate cake" }
+              title: "24/7 Support",              description: "We're here to help whenever you need",              phoneOne: { imageSrc: "http://img.b2bpic.net/premium-photo/assortment-delicious-cakes-with-berries-nuts_282218-29875.jpg?id=386531503", imageAlt: "chocolate cake" },
+              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/fruity-cake-with-fresh-fruits-cream-stander_1220-6157.jpg?id=15101068", imageAlt: "chocolate cake" }
             }
           ]}
           showStepNumbers={true}
@@ -211,7 +211,7 @@ export default function LandingPage() {
           description="Quality, care, and passion in every bite"
           metrics={[
             {
-              id: "fresh",              value: "🍰",              title: "Baked Fresh Daily",              items: ["Morning batches", "Premium ingredients"]
+              id: "fresh",              value: "     🍰",              title: "Baked Fresh Daily",              items: ["Morning batches", "Premium ingredients"]
             },
             {
               id: "homemade",              value: "🏡",              title: "Homemade Items",              items: ["Traditional recipes", "Artisan quality"]
@@ -257,22 +257,22 @@ export default function LandingPage() {
           description="Visual feast of our sweet creations"
           blogs={[
             {
-              id: "gallery-1",              category: "showcase",              title: "Beautiful Cake Designs",              excerpt: "Discover our stunning custom cake creations",              imageSrc: "http://img.b2bpic.net/free-vector/wedding-element-collection_23-2148044605.jpg",              imageAlt: "cake display bakery showcase window",              authorName: "Sweet Bliss Team",              authorAvatar: "http://img.b2bpic.net/free-photo/woman-showing-ok-sign_23-2148990150.jpg",              date: "Recent"
+              id: "gallery-1",              category: "showcase",              title: "Beautiful Cake Designs",              excerpt: "Discover our stunning custom cake creations",              imageSrc: "http://img.b2bpic.net/free-vector/wedding-element-collection_23-2148044605.jpg",              imageAlt: "cake display bakery showcase window",              authorName: "TiyasaBakeryBites ",              authorAvatar: "http://img.b2bpic.net/free-photo/woman-showing-ok-sign_23-2148990150.jpg",              date: "Recent"
             },
             {
-              id: "gallery-2",              category: "showcase",              title: "Cupcakes & Pastries",              excerpt: "Colorful and delicious mini treats",              imageSrc: "http://img.b2bpic.net/free-photo/wedding-decorations-reception_1328-2261.jpg",              imageAlt: "cupcakes arranged rainbow colors",              authorName: "Sweet Bliss Team",              authorAvatar: "http://img.b2bpic.net/free-photo/studio-portrait-serious-bearded-male-dressed-suit_613910-5596.jpg",              date: "Recent"
+              id: "gallery-2",              category: "showcase",              title: "Cupcakes & Pastries",              excerpt: "Colorful and delicious mini treats",              imageSrc: "http://img.b2bpic.net/free-photo/wedding-decorations-reception_1328-2261.jpg",              imageAlt: "cupcakes arranged rainbow colors",              authorName: "TiyasaBakeryBites ",              authorAvatar: "http://img.b2bpic.net/free-photo/stylish-indian-beard-man-pink-tshirt-india-model-posed-outdoor-streets-city_627829-12720.jpg?id=27685269",              date: "Recent"
             },
             {
-              id: "gallery-3",              category: "behind-scenes",              title: "Baking Process",              excerpt: "See how we craft our delicious cakes",              imageSrc: "http://img.b2bpic.net/free-photo/composition-different-foods-ingredients_23-2148869884.jpg",              imageAlt: "cake baking process kitchen scenes",              authorName: "Sweet Bliss Team",              authorAvatar: "http://img.b2bpic.net/free-photo/portrait-woman-smiling-kitchen_107420-12357.jpg",              date: "Recent"
+              id: "gallery-3",              category: "behind-scenes",              title: "Baking Process",              excerpt: "See how we craft our delicious cakes",              imageSrc: "http://img.b2bpic.net/free-photo/composition-different-foods-ingredients_23-2148869884.jpg",              imageAlt: "cake baking process kitchen scenes",              authorName: "TiyasaBakeryBites ",              authorAvatar: "http://img.b2bpic.net/free-photo/portrait-smiling-indian-person-posing-front-camera_482257-122324.jpg?id=417583914",              date: "Recent"
             },
             {
-              id: "gallery-4",              category: "showcase",              title: "Premium Plating",              excerpt: "Elegant presentation of our finest desserts",              imageSrc: "http://img.b2bpic.net/free-photo/beautiful-elegant-cake-topper_23-2149232370.jpg",              imageAlt: "elegant cake photography styling",              authorName: "Sweet Bliss Team",              authorAvatar: "http://img.b2bpic.net/free-photo/friendly-business-team-waving-office-stairway_1262-5054.jpg",              date: "Recent"
+              id: "gallery-4",              category: "showcase",              title: "Premium Plating",              excerpt: "Elegant presentation of our finest desserts",              imageSrc: "http://img.b2bpic.net/free-photo/beautiful-elegant-cake-topper_23-2149232370.jpg",              imageAlt: "elegant cake photography styling",              authorName: "TiyasaBakeryBites ",              authorAvatar: "http://img.b2bpic.net/free-photo/friendly-business-team-waving-office-stairway_1262-5054.jpg",              date: "Recent"
             },
             {
-              id: "gallery-5",              category: "showcase",              title: "Store Front",              excerpt: "Visit our charming bakery location",              imageSrc: "http://img.b2bpic.net/free-photo/medium-shot-friends-enjoying-coffee_23-2148263231.jpg",              imageAlt: "bakery storefront exterior charming",              authorName: "Sweet Bliss Team",              authorAvatar: "http://img.b2bpic.net/free-photo/woman-showing-ok-sign_23-2148990150.jpg",              date: "Recent"
+              id: "gallery-5",              category: "showcase",              title: "Store Front",              excerpt: "Visit our charming bakery location",              imageSrc: "http://img.b2bpic.net/free-photo/portrait-young-beautiful-indian-woman-with-sari_123827-29582.jpg?id=136699169",              imageAlt: "bakery storefront exterior charming",              authorName: "TiyasaBakeryBites ",              authorAvatar: "http://img.b2bpic.net/free-photo/woman-showing-ok-sign_23-2148990150.jpg",              date: "Recent"
             },
             {
-              id: "gallery-6",              category: "showcase",              title: "Sweet Variety",              excerpt: "Taste our complete selection of treats",              imageSrc: "http://img.b2bpic.net/free-psd/flat-design-sweet-food-template_23-2149885120.jpg",              imageAlt: "cake tasting selection variety",              authorName: "Sweet Bliss Team",              authorAvatar: "http://img.b2bpic.net/free-photo/studio-portrait-serious-bearded-male-dressed-suit_613910-5596.jpg",              date: "Recent"
+              id: "gallery-6",              category: "showcase",              title: "Sweet Variety",              excerpt: "Taste our complete selection of treats",              imageSrc: "http://img.b2bpic.net/free-psd/flat-design-sweet-food-template_23-2149885120.jpg",              imageAlt: "cake tasting selection variety",              authorName: "TiyasaBakeryBites ",              authorAvatar: "http://img.b2bpic.net/free-photo/stylish-indian-beard-man-pink-tshirt-india-model-posed-outdoor-streets-city_627829-12720.jpg?id=27685269",              date: "Recent"
             }
           ]}
           animationType="slide-up"
@@ -438,7 +438,7 @@ export default function LandingPage() {
                 <ul className="list-disc list-inside text-foreground/70 text-sm space-y-1">
                   <li><strong>ID:</strong> Unique identifier for the product</li>
                   <li><strong>Name:</strong> Product name (e.g., "Chocolate Cake")</li>
-                  <li><strong>Price:</strong> Price with currency (e.g., "₹500")</li>
+                  <li><strong>Price:</strong> Price with currency (e.g., "₹250")</li>
                   <li><strong>Image:</strong> URL to product image</li>
                   <li><strong>Alt text:</strong> Description for accessibility</li>
                 </ul>
