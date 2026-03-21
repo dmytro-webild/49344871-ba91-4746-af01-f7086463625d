@@ -13,14 +13,25 @@ import TestimonialCardFive from "@/components/sections/testimonial/TestimonialCa
 import ContactCTA from "@/components/sections/contact/ContactCTA";
 import FooterLogoReveal from "@/components/sections/footer/FooterLogoReveal";
 import { useState, useEffect } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { MessageCircle, X, Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
 export default function LandingPage() {
   const [chatOpen, setChatOpen] = useState(false);
   const [messages, setMessages] = useState<Array<{ id: string; text: string; sender: 'user' | 'bot' }>>([]);
   const [inputValue, setInputValue] = useState("");
+  const [contactFormData, setContactFormData] = useState({ name: "", email: "", message: "" });
   const [cmsData, setCmsData] = useState({
-    logo: "Tiyasa's Bakery Bites ",    categories: [
+    logo: "Tiyasa's Bakery Bites",    phone: "+91-9876543210",    email: "info@tiysasbakery.com",    address: "123 Bakery Lane, Mumbai, India 400001",    businessHours: [
+      { day: "Monday - Friday", hours: "9:00 AM - 9:00 PM" },
+      { day: "Saturday", hours: "10:00 AM - 10:00 PM" },
+      { day: "Sunday", hours: "11:00 AM - 8:00 PM" }
+    ],
+    socialLinks: [
+      { platform: "Facebook", url: "https://facebook.com", icon: "facebook" },
+      { platform: "Instagram", url: "https://instagram.com", icon: "instagram" },
+      { platform: "WhatsApp", url: "https://wa.me/919876543210", icon: "whatsapp" }
+    ],
+    categories: [
       "Cakes",      "Theme Cakes",      "Relationship Cakes",      "Desserts",      "Birthday Cakes",      "Anniversary Cakes"
     ],
     products: [
@@ -59,6 +70,17 @@ export default function LandingPage() {
         setMessages(prev => [...prev, botResponse]);
       }, 500);
     }
+  };
+
+  const handleContactFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setContactFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleContactFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert(`Thank you ${contactFormData.name}! We'll get back to you soon.`);
+    setContactFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -120,16 +142,24 @@ export default function LandingPage() {
           description="Premium quality and exceptional service"
           features={[
             {
-              id: 0,              title: "Premium Quality",              description: "Freshly baked with the finest ingredients",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=1", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=2", imageAlt: "chocolate cake" }
+              id: 0,
+              title: "Premium Quality",              description: "Freshly baked with the finest ingredients",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=1", imageAlt: "chocolate cake" },
+              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=2", imageAlt: "chocolate cake" }
             },
             {
-              id: 1,              title: "Custom Designs",              description: "Personalized cakes for your special moments",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=3", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=4", imageAlt: "chocolate cake" }
+              id: 1,
+              title: "Custom Designs",              description: "Personalized cakes for your special moments",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=3", imageAlt: "chocolate cake" },
+              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=4", imageAlt: "chocolate cake" }
             },
             {
-              id: 2,              title: "Fast Delivery",              description: "Quick and reliable delivery service",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=5", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=6", imageAlt: "chocolate cake" }
+              id: 2,
+              title: "Fast Delivery",              description: "Quick and reliable delivery service",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=5", imageAlt: "chocolate cake" },
+              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=6", imageAlt: "chocolate cake" }
             },
             {
-              id: 3,              title: "24/7 Support",              description: "We're here to help whenever you need",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=7", imageAlt: "chocolate cake" },              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=8", imageAlt: "chocolate cake" }
+              id: 3,
+              title: "24/7 Support",              description: "We're here to help whenever you need",              phoneOne: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=7", imageAlt: "chocolate cake" },
+              phoneTwo: { imageSrc: "http://img.b2bpic.net/free-photo/homemade-cake-made-chocolate_23-2148173401.jpg?_wi=8", imageAlt: "chocolate cake" }
             }
           ]}
           showStepNumbers={true}
@@ -268,12 +298,119 @@ export default function LandingPage() {
           title="Ready to Order?"
           description="Contact us today to place your order or customize your perfect cake. We're here to make your special moment even sweeter!"
           buttons={[
-            { text: "Call Us", href: "tel:+91-9876543210" },
-            { text: "WhatsApp", href: "https://wa.me/919876543210" }
+            { text: "Call Us", href: `tel:${cmsData.phone}` },
+            { text: "WhatsApp", href: `https://wa.me/${cmsData.phone.replace(/[^0-9]/g, '')}` }
           ]}
           background={{ variant: "radial-gradient" }}
           useInvertedBackground={true}
         />
+      </div>
+
+      <div id="contact-info" data-section="contact-info" className="py-16 px-6 bg-gradient-to-b from-background to-background-accent">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-foreground">Contact Us & Store Information</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <div className="flex gap-4 items-start">
+                <Phone className="w-6 h-6 text-primary-cta mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-lg text-foreground mb-1">Phone</h3>
+                  <a href={`tel:${cmsData.phone}`} className="text-accent hover:text-primary-cta transition-colors">{cmsData.phone}</a>
+                </div>
+              </div>
+              
+              <div className="flex gap-4 items-start">
+                <Mail className="w-6 h-6 text-primary-cta mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-lg text-foreground mb-1">Email</h3>
+                  <a href={`mailto:${cmsData.email}`} className="text-accent hover:text-primary-cta transition-colors">{cmsData.email}</a>
+                </div>
+              </div>
+              
+              <div className="flex gap-4 items-start">
+                <MapPin className="w-6 h-6 text-primary-cta mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-lg text-foreground mb-1">Location</h3>
+                  <p className="text-foreground/80">{cmsData.address}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-card p-6 rounded-lg border border-accent/20">
+              <h3 className="text-xl font-semibold mb-4 text-foreground">Send us a Message</h3>
+              <form onSubmit={handleContactFormSubmit} className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={contactFormData.name}
+                  onChange={handleContactFormChange}
+                  className="w-full px-4 py-2 bg-background border border-accent/30 rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary-cta transition-colors"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={contactFormData.email}
+                  onChange={handleContactFormChange}
+                  className="w-full px-4 py-2 bg-background border border-accent/30 rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary-cta transition-colors"
+                  required
+                />
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={contactFormData.message}
+                  onChange={handleContactFormChange}
+                  rows={4}
+                  className="w-full px-4 py-2 bg-background border border-accent/30 rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary-cta transition-colors resize-none"
+                  required
+                ></textarea>
+                <button
+                  type="submit"
+                  className="w-full bg-primary-cta text-white font-semibold py-2 rounded-lg hover:bg-primary-cta/90 transition-colors flex items-center justify-center gap-2"
+                >
+                  <Send size={18} />
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+
+          {/* Business Hours */}
+          <div className="bg-card p-6 rounded-lg border border-accent/20 mb-8">
+            <div className="flex gap-3 items-center mb-4">
+              <Clock className="w-6 h-6 text-primary-cta" />
+              <h3 className="text-xl font-semibold text-foreground">Business Hours</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {cmsData.businessHours.map((schedule, idx) => (
+                <div key={idx} className="text-center">
+                  <p className="font-semibold text-foreground">{schedule.day}</p>
+                  <p className="text-foreground/70">{schedule.hours}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* WhatsApp CTA */}
+          <div className="bg-gradient-to-r from-primary-cta/10 to-accent/10 p-8 rounded-lg border border-primary-cta/20 text-center">
+            <h3 className="text-2xl font-bold text-foreground mb-3">Chat with Us on WhatsApp</h3>
+            <p className="text-foreground/70 mb-6">Get instant responses to your queries about cakes, orders, and custom designs</p>
+            <a
+              href={`https://wa.me/${cmsData.phone.replace(/[^0-9]/g, '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary-cta text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary-cta/90 transition-colors"
+            >
+              <MessageCircle size={20} />
+              Start WhatsApp Chat
+            </a>
+          </div>
+        </div>
       </div>
 
       <div id="footer" data-section="footer">
